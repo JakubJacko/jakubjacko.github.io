@@ -1,0 +1,512 @@
+h1, h2, h3, h4 {
+  color: white;
+}
+
+.button {
+  text-decoration: none;
+  border: 2px solid #7562E0;
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 0.7em;
+}
+.button.fill {
+  background-color: #7562E0;
+}
+
+@-webkit-keyframes selectItem {
+  0% {
+    border-color: red;
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  100% {
+    border-color: blue;
+  }
+}
+
+@keyframes selectItem {
+  0% {
+    border-color: red;
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  100% {
+    border-color: blue;
+  }
+}
+body {
+  background-color: #181824;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+body > header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  background-color: #000036;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+body > header input {
+  display: none;
+}
+body > header label {
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  cursor: pointer;
+}
+body > header label div {
+  background-color: #7562E0;
+  margin: 0 5px;
+  height: 5px;
+  position: absolute;
+  width: 100%;
+  transition: 0.5s;
+}
+body > header label div:nth-child(1) {
+  top: calc(20% - 2.5px);
+}
+body > header label div:nth-child(2) {
+  top: calc(50% - 2.5px);
+}
+body > header label div:nth-child(3) {
+  top: calc(80% - 2.5px);
+}
+body > header nav {
+  transition: 0.5s;
+  position: fixed;
+  left: 0;
+  height: 3rem;
+  top: calc(-100% - 3.5rem);
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 3.5rem;
+  background-color: #000036;
+  opacity: 0.6;
+}
+body > header nav ul {
+  list-style-type: none;
+}
+body > header #toggler:checked ~ nav {
+  top: -0.5rem;
+}
+body > header #toggler:checked ~ label div {
+  background-color: white;
+}
+body > header #toggler:checked ~ label div:nth-child(1) {
+  transform: rotate(45deg);
+  top: calc(50% - 2.5px);
+}
+body > header #toggler:checked ~ label div:nth-child(2) {
+  opacity: 0;
+}
+body > header #toggler:checked ~ label div:nth-child(3) {
+  transform: rotate(-45deg);
+  top: calc(50% - 2.5px);
+}
+body > header h1 {
+  margin: 0 0 0 4rem;
+  color: #7562E0;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  body > header label {
+    display: none;
+  }
+  body > header nav {
+    position: static;
+    display: flex;
+    margin: 0;
+  }
+  body > header nav ul {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 3.5rem;
+    gap: 8rem;
+  }
+}
+body #home {
+  background-color: #18141f;
+  margin: 3.5rem 3.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 7rem 0;
+}
+body #home header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #home header .wrapper {
+  margin: 0 1rem;
+}
+body #home header .wrapper p {
+  margin: 0.5rem 3.5rem;
+  font-size: clamp(0.2em, 2vw, 2em);
+  margin-bottom: 2rem;
+}
+body #home header .wrapper h2 {
+  color: white;
+  margin: 0 3.5rem;
+  font-size: clamp(1em, 10vw, 4em);
+  line-height: 1em;
+}
+body #home header .wrapper desc {
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+body #home header .wrapper .buttonField {
+  width: 100%;
+  margin: 0 3.5rem;
+  display: flex;
+  gap: 4rem;
+  font-weight: bold;
+}
+body #home header .button {
+  font-size: clamp(0.2em, 2vw, 1.5em);
+}
+body #home .imgWrapper {
+  flex: 1;
+  text-align: center;
+}
+body #home .imgWrapper img {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  body #home {
+    margin: 7rem 0;
+    display: flex;
+    flex-direction: row;
+  }
+  body #home .wrapper {
+    flex: 2;
+  }
+  body #home .imgWrapper {
+    flex: 1;
+    min-width: 50%;
+  }
+  body #home button {
+    display: flex;
+  }
+}
+body #about {
+  background-color: #18141f;
+  margin: 0 3.5rem;
+  padding-bottom: 6em;
+}
+body #about div {
+  display: flex;
+  margin: 0 3.5rem;
+  align-items: center;
+  padding-top: 2rem;
+  font-size: clamp(0.2em, 2vw, 2em);
+}
+body #about div span {
+  color: #7562E0;
+  font-size: 3.9em;
+  font-weight: bold;
+}
+body #about div p {
+  padding-left: 1em;
+  font-size: 1.4em;
+}
+body #about p {
+  margin: 0 3.5rem;
+  font-size: clamp(0.2em, 2vw, 2em);
+}
+body #about h2 {
+  padding-top: 2rem;
+  color: #7562E0;
+  margin: 0 3.5rem;
+  font-size: clamp(0.5em, 8vw, 2em);
+  line-height: 1em;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  body #about {
+    margin: 7rem 0;
+    padding-bottom: 6em;
+    flex-direction: row;
+  }
+  body #about div p {
+    margin: 0 -1.5rem;
+  }
+}
+body #services {
+  margin: -3em 3.5rem;
+  background-color: #18141f;
+  padding-bottom: 4em;
+}
+body #services h2 {
+  margin: 0 3.5rem;
+}
+body #services section {
+  display: grid;
+  gap: 1em;
+}
+body #services section article {
+  background-color: #121320;
+  border: 4px solid #7562E0;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr 4fr;
+  padding-top: 2.5em;
+  margin: 0 3.5rem;
+}
+body #services section article:hover {
+  -webkit-animation: selectItem 2s ease-out;
+          animation: selectItem 2s ease-out;
+}
+body #services section article h3 {
+  margin: 0;
+  text-align: center;
+}
+body #services section article p {
+  align-self: start;
+  text-align: center;
+}
+body #services section article img {
+  align-self: end;
+  zoom: 100%;
+}
+body #services section article:nth-child(even) {
+  border: 4px solid white;
+}
+body #services section article:nth-child(even) h3 {
+  color: #7562E0;
+}
+@media (min-width: 768px) and (max-width: 1060px) {
+  body #services {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: -3.5em;
+    font-size: clamp(0.5em, 8vw, 2em);
+    padding-bottom: 6em;
+  }
+  body #services h2 {
+    margin-left: 3.5rem;
+  }
+  body #services section {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  body #services section article {
+    padding-top: 0;
+  }
+  body #services section article img {
+    zoom: 160%;
+  }
+}
+@media (min-width: 1060px) {
+  body #services {
+    margin: -5em 5em 0 0;
+    font-size: clamp(0.5em, 8vw, 2em);
+    padding-bottom: 6em;
+    width: 100%;
+  }
+  body #services section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  body #services section article {
+    padding-top: 0;
+  }
+  body #services section article img {
+    zoom: 220%;
+  }
+}
+body #Featured {
+  margin: -3em 3.5rem;
+  background-color: #18141f;
+  padding-bottom: 4em;
+}
+body #Featured h2, body #Featured p, body #Featured h3 {
+  margin: 1em 3.5rem;
+}
+body #Featured .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body #Featured .container article {
+  background-color: #31313f;
+  padding: 1em;
+  text-align: left;
+  max-width: 311px;
+  border-radius: 10px;
+  margin: 0.5em;
+}
+body #Featured .container article img {
+  max-width: 100%;
+}
+body #Featured .container article h2, body #Featured .container article p, body #Featured .container article h3 {
+  margin: 0;
+}
+body #Featured .buttonWrapper {
+  align-items: center;
+}
+@media (min-width: 768px) and (max-width: 1060px) {
+  body #Featured {
+    margin: -5em 0;
+    padding-right: 3.5em;
+    font-size: clamp(0.5em, 8vw, 2em);
+  }
+  body #Featured article {
+    width: calc(50% - 3em);
+  }
+}
+@media (min-width: 1060px) {
+  body #Featured {
+    margin: -5em 0;
+    font-size: clamp(0.5em, 8vw, 2em);
+  }
+  body #Featured article {
+    width: calc(33% - 3em);
+  }
+}
+body #Contact {
+  background-color: #18141f;
+  margin: 3.5rem;
+  position: relative;
+  top: -10px;
+  min-height: 800px;
+}
+body #Contact h2 {
+  color: #7562E0;
+}
+body #Contact h2, body #Contact p, body #Contact a {
+  margin-left: 3.5rem;
+}
+body #Contact h3 {
+  color: white;
+}
+body #Contact form {
+  margin: 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body #Contact form input, body #Contact form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 0.5em 0;
+  background-color: #181824;
+  border: none;
+  outline: 0;
+  color: white;
+}
+@media (min-width: 768px) and (max-width: 1060px) {
+  body #Contact {
+    margin: 2em 0;
+    padding-right: 3.5em;
+    font-size: clamp(0.5em, 8vw, 2em);
+    display: inline-flex;
+  }
+  body #Contact h2 {
+    margin: 0 3.5rem;
+  }
+  body #Contact .socials {
+    display: inline-flex;
+  }
+  body #Contact form {
+    position: relative;
+    top: -1em;
+  }
+}
+@media (min-width: 1060px) {
+  body #Contact {
+    margin: 0 auto;
+    font-size: clamp(0.5em, 8vw, 2em);
+    width: 100%;
+    display: inline-flex;
+  }
+}
+body footer {
+  background-color: #18141f;
+  margin: 0 3.5rem;
+  position: relative;
+  top: -5em;
+}
+body footer .links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 8px;
+}
+body footer .links a {
+  color: darkgray;
+  text-decoration: none;
+  opacity: 0.5;
+}
+body footer .links a:nth-child(1) {
+  grid-area: e(1);
+}
+body footer .links a:nth-child(2) {
+  grid-area: e(2);
+}
+body footer .links a:nth-child(3) {
+  grid-area: e(3);
+}
+body footer .links a:nth-child(4) {
+  grid-area: e(4);
+}
+body footer .links a:nth-child(5) {
+  grid-area: e(5);
+}
+@media (min-width: 768px) and (max-width: 1060px) {
+  body footer {
+    grid-template-areas: "e1 e2 e3 e4 e5";
+    width: 99%;
+    font-size: clamp(0.5em, 8vw, 2em);
+  }
+  body footer h2 {
+    margin: 0 3.5rem;
+  }
+  body footer .links {
+    padding-right: 5.5rem;
+  }
+  body footer .socials {
+    display: flex;
+  }
+  body footer form {
+    position: relative;
+    top: -1em;
+  }
+}
+@media (min-width: 1060px) {
+  body footer {
+    grid-template-areas: "e1 e2 e3 e4 e5";
+  }
+}
+body a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-style: bold;
+}
+body a:hover {
+  color: #282162;
+}/*# sourceMappingURL=style.css.map */
