@@ -387,9 +387,8 @@ body #Featured .buttonWrapper {
 }
 body #Contact {
   background-color: #18141f;
-  margin: 3.5rem;
-  position: relative;
-  top: -10px;
+  margin: 0 3.5rem;
+  display: flex;
   min-height: 800px;
 }
 body #Contact h2 {
