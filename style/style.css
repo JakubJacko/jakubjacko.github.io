@@ -437,7 +437,7 @@ body #Contact form input, body #Contact form textarea {
 }
 @media (min-width: 1060px) {
   body #Contact {
-    margin: 0 auto;
+    margin: 1rem auto;
     font-size: clamp(0.5em, 8vw, 2em);
     width: 100%;
     display: inline-flex;
